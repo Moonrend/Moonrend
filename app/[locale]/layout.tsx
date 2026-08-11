@@ -85,7 +85,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
     <html
       lang={localeHtmlLang[typedLocale]}
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-background">
         <a

@@ -2,22 +2,11 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import type { Locale } from "./i18n/config";
+import type { Post, PostMeta } from "./blog-types";
+
+export type { Post, PostMeta } from "./blog-types";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content", "blog");
-
-export type PostMeta = {
-  slug: string;
-  locale: Locale;
-  title: string;
-  description: string;
-  /** ISO date string from frontmatter. */
-  date: string;
-  tags: string[];
-  author: string;
-  readingMinutes: number;
-};
-
-export type Post = PostMeta & { content: string };
 
 function localeDir(locale: Locale) {
   return path.join(CONTENT_ROOT, locale);
@@ -41,6 +30,12 @@ function readPost(locale: Locale, fileName: string): Post | null {
 
   if (!data.title || !data.date) return null;
 
+  const authorIds = Array.isArray(data.authors)
+    ? data.authors.map(String)
+    : data.authorId
+      ? [String(data.authorId)]
+      : ["sunwuyuan"];
+
   return {
     slug: fileName.replace(/\.mdx?$/, ""),
     locale,
@@ -49,7 +44,9 @@ function readPost(locale: Locale, fileName: string): Post | null {
     date: new Date(data.date).toISOString(),
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
     author: String(data.author ?? "Moonrend"),
+    authorIds,
     readingMinutes: estimateReadingMinutes(content),
+    cover: data.cover ? String(data.cover) : undefined,
     content,
   };
 }
@@ -65,7 +62,31 @@ export function getAllPosts(locale: Locale): PostMeta[] {
     .map((file) => readPost(locale, file))
     .filter((post): post is Post => post !== null)
     .sort((a, b) => b.date.localeCompare(a.date))
-    .map(({ content: _content, ...meta }) => meta);
+    .map(
+      ({
+        slug,
+        locale,
+        title,
+        description,
+        date,
+        tags,
+        author,
+        authorIds,
+        readingMinutes,
+        cover,
+      }): PostMeta => ({
+        slug,
+        locale,
+        title,
+        description,
+        date,
+        tags,
+        author,
+        authorIds,
+        readingMinutes,
+        cover,
+      }),
+    );
 }
 
 export function getPost(locale: Locale, slug: string): Post | null {
@@ -87,11 +108,4 @@ export function getAllPostParams(locales: readonly Locale[]) {
   );
 }
 
-export function formatPostDate(date: string, locale: Locale): string {
-  return new Intl.DateTimeFormat(locale === "zh" ? "zh-CN" : "en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  }).format(new Date(date));
-}
+export { formatPostDate } from "./format-date";

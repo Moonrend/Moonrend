@@ -184,3 +184,15 @@
 [data-rehype-pretty-code-title] + pre {
   @apply mt-0 rounded-t-none;
 }
+
+/* Cover placeholder: solid at top, fades to transparent */
+.article-cover-placeholder {
+  display: block;
+  background-color: transparent;
+  background-image: linear-gradient(
+    to bottom,
+    hsl(var(--cover-h1) 12% 24%) 0%,
+    hsl(var(--cover-h1) 10% 18% / 0.5) 28%,
+    transparent 100%
+  );
+}

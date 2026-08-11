@@ -1,0 +1,32 @@
+---
+title: Raising Agent Intelligence Together
+description: Introducing Zakura, our new agent aggregation platform
+date: 2026-08-10
+author: 孙悟元
+authors:
+  - sunwuyuan
+tags:
+  - Product
+---
+
+## Zakura
+
+Raising agent intelligence together.
+
+Many AI platforms offer connectors. ChatGPT has “plugins,” Claude has connectors and custom MCP. More platforms are willing to open up their data. As standards mature, MCP capabilities grow richer, and skills and agent projects multiply — yet one problem remains: our data is still siloed.
+
+Codex cannot know what you said to Claude Code. A cloud agent cannot know what you did locally. Local agents need cloud search reconfigured again and again. Agent memory cannot be shared. Skills sit in isolation, synced only through unreliable built-in flows that are hard to keep current. We have walked into a new set of islands.
+
+If we have already put agents on every computer, in front of every end user — what is left for us to do?
+
+I cannot answer that. But maybe we can connect them better: once, not dozens of times. I do not want to configure my Notion MCP over and over, figure out how to export memory again and again, or copy configs, skills, and data between agents. I built a platform to fix that.
+
+Zakura is that platform. It aggregates MCP, skills, cloud agents, self-hosted services, model routing, persistent filesystems, and runtimes — and exposes them uniformly to the AI tools you already use:
+
+1. **Cloud agents**: Zakura includes agents that run in the cloud, sync progress across devices in real time, share tools and skills, and execute in their own cloud sandboxes — always online, always available.
+2. **As a proxy gateway**: The simplest path. Point your upstream models at Zakura, then plug our OpenAI- and Anthropic-compatible endpoints into your agents. Cloud and local capabilities merge, and conversations are stored in the cloud so agents can query, analyze, and continue later.
+3. **As MCP**: We expose all of the above as MCP, on the latest protocol. Aggregate your tools and skills in Zakura once, and any compatible agent can use them.
+
+Zakura also supports one-click deployment of SearXNG, Firecrawl, Jina Reader, and other self-hosted services. We are expanding that set.
+
+I am not sure this idea points at the right future — but maybe you can try it. We offer a cloud SaaS with free cloud environments (I am a high-school student; the project has no funding, so please go easy on us). Free for everyone.

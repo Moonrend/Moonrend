@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHeader } from "@/components/primitives/section";
-import { Reveal } from "@/components/primitives/reveal";
-import { buttonVariants } from "@/components/ui/button";
-import { GithubIcon } from "@/components/site/icons";
+import { TeamRoster } from "@/components/about/team-roster";
+import {
+  BLOG_HERO_PAD,
+  BlogSection,
+  BlogShell,
+} from "@/components/blog/blog-frame";
+import { Comment } from "@/components/blog/comment";
+import { MdxContent } from "@/components/mdx/mdx-content";
+import { getAbout } from "@/lib/about";
 import { getDictionary } from "@/lib/i18n/dictionaries";
-import { isLocale } from "@/lib/i18n/config";
-import { siteConfig } from "@/lib/site";
-import { cn } from "@/lib/utils";
+import { isLocale, type Locale } from "@/lib/i18n/config";
 
 export async function generateMetadata({
   params,
@@ -17,7 +20,7 @@ export async function generateMetadata({
   const dict = getDictionary(locale);
   return {
     title: dict.about.title,
-    description: dict.about.lead,
+    description: dict.about.subtitle,
     alternates: { canonical: `/${locale}/about` },
   };
 }
@@ -25,34 +28,38 @@ export async function generateMetadata({
 export default async function AboutPage({ params }: PageProps<"/[locale]/about">) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const dict = getDictionary(locale);
+
+  const typedLocale = locale as Locale;
+  const dict = getDictionary(typedLocale);
+  const about = getAbout(typedLocale);
+  if (!about) notFound();
 
   return (
-    <div className="container-site py-16 pb-28 md:py-20">
-      <PageHeader title={dict.about.title} subtitle={dict.about.lead} />
+    <BlogShell>
+      <BlogSection hero>
+        <div className={BLOG_HERO_PAD}>
+          <h1 className="heading-lg">{dict.about.title}</h1>
+          <p className="mt-3 text-[15px] text-muted-foreground">{dict.about.subtitle}</p>
+        </div>
+      </BlogSection>
 
-      <div className="mt-16 grid gap-10 md:grid-cols-2">
-        <Reveal>
-          <h2 className="eyebrow text-faint">{dict.about.openSourceTitle}</h2>
-          <a
-            href={siteConfig.github}
-            target="_blank"
-            rel="noreferrer"
-            className={cn(buttonVariants({ variant: "outline" }), "mt-4 font-normal")}
-          >
-            <GithubIcon className="size-4" />
-            {siteConfig.githubRepo}
-          </a>
-          <p className="mt-4 font-mono text-[13px] text-faint">{siteConfig.license}</p>
-        </Reveal>
+      <BlogSection>
+        <article className="max-w-[680px] px-4 py-10 sm:px-12 sm:py-14 [&_a]:text-[var(--terminal-green)]">
+          <MdxContent source={about.content} />
+        </article>
+      </BlogSection>
 
-        <Reveal delay={0.05}>
-          <h2 className="eyebrow text-faint">{dict.about.contactTitle}</h2>
-          <p className="mt-4 text-[13px] text-stone">
-            {siteConfig.author} · {siteConfig.email}
-          </p>
-        </Reveal>
-      </div>
-    </div>
+      <BlogSection>
+        <TeamRoster locale={typedLocale} />
+      </BlogSection>
+
+      <BlogSection>
+        <div className="px-4 py-10 sm:px-12 sm:py-14">
+          <div className="max-w-[680px]">
+            <Comment />
+          </div>
+        </div>
+      </BlogSection>
+    </BlogShell>
   );
 }

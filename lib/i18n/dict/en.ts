@@ -9,7 +9,7 @@ export const en: Dictionary = {
   },
 
   nav: {
-    product: "Product",
+    home: "Home",
     blog: "Blog",
     pricing: "Pricing",
     about: "About",
@@ -112,11 +112,19 @@ export const en: Dictionary = {
 
   blog: {
     title: "Blog",
+    subtitle: "Latest posts and updates",
     minRead: "min",
     backToBlog: "Back to blog",
     empty: "No posts yet.",
+    emptyTag: "No posts in this category.",
+    all: "All",
     allPosts: "All posts",
     relatedPosts: "Keep reading",
+    tagsAria: "Post categories",
+    sidebarDetails: "Details",
+    sidebarPublished: "Published",
+    sidebarReading: "Reading",
+    sidebarToc: "On this page",
   },
 
   pricing: {
@@ -124,12 +132,9 @@ export const en: Dictionary = {
     subtitle: "Open source is free. The hosted edition is free during public preview.",
   },
 
-
   about: {
-    title: "About Moonrend",
-    lead: "Moonrend builds Zakura: runtime environments and a unified MCP gateway for agents.",
-    openSourceTitle: "Open source",
-    contactTitle: "Contact",
+    title: "About",
+    subtitle: "About Moonrend and what we are building",
   },
 
   notFound: {

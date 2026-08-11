@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "title": {
+    "zh": "尝试 Zakura",
+    "en": "Try Zakura"
+  },
+  "description": {
+    "zh": "协同提升 Agent 的智能。",
+    "en": "Agents that get smarter together."
+  },
+  "href": "https://preview.moonrend.com",
+  "image": "/media/products/zakura-1.png"
+}

@@ -7,7 +7,7 @@ export const zh = {
   },
 
   nav: {
-    product: "产品",
+    home: "主页",
     blog: "博客",
     pricing: "定价",
     about: "关于",
@@ -48,7 +48,7 @@ export const zh = {
     hosted: {
       name: "托管版",
       tag: "预览中",
-      price: "preview",
+      price: "Preview",
       priceNote: "公开预览期免费",
       cta: "开始使用",
       features: [
@@ -111,11 +111,19 @@ export const zh = {
 
   blog: {
     title: "博客",
+    subtitle: "最新文章与更新",
     minRead: "分钟",
     backToBlog: "返回博客",
     empty: "还没有文章。",
+    emptyTag: "该分类下暂无文章。",
+    all: "全部",
     allPosts: "全部文章",
     relatedPosts: "继续阅读",
+    tagsAria: "文章分类",
+    sidebarDetails: "详细信息",
+    sidebarPublished: "发布",
+    sidebarReading: "阅读",
+    sidebarToc: "本页目录",
   },
 
   pricing: {
@@ -123,12 +131,9 @@ export const zh = {
     subtitle: "开源版免费。托管版公开预览期免费。",
   },
 
-
   about: {
-    title: "关于 Moonrend",
-    lead: "Moonrend 的产品是 Zakura：给 Agent 的运行环境与统一 MCP 网关。",
-    openSourceTitle: "开源",
-    contactTitle: "联系",
+    title: "关于",
+    subtitle: "关于 Moonrend 与正在做的事",
   },
 
   notFound: {
