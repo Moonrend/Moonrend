@@ -19,14 +19,13 @@ type PlanProps = {
   tag: string;
   price: string;
   priceNote: string;
-  body: string;
   features: readonly string[];
   /** Inverted card — used sparingly, to break an all-dark grid. */
   inverted?: boolean;
   children: ReactNode;
 };
 
-function Plan({ name, tag, price, priceNote, body, features, inverted, children }: PlanProps) {
+function Plan({ name, tag, price, priceNote, features, inverted, children }: PlanProps) {
   return (
     <article
       className={cn(
@@ -51,15 +50,6 @@ function Plan({ name, tag, price, priceNote, body, features, inverted, children 
       <p className="mt-6 text-[30px] font-[450] leading-none tracking-[-0.05em]">{price}</p>
       <p className={cn("mt-2 text-[13px]", inverted ? "text-[#5c5c5c]" : "text-faint")}>
         {priceNote}
-      </p>
-
-      <p
-        className={cn(
-          "mt-5 text-[13px] leading-[1.54]",
-          inverted ? "text-[#404040]" : "text-muted-foreground",
-        )}
-      >
-        {body}
       </p>
 
       <ul className="mt-6 flex flex-col gap-2.5">
@@ -89,11 +79,7 @@ export function Editions({ dict, showHeader = true }: EditionsProps) {
   return (
     <Section id="editions" className="py-20 md:py-24">
       {showHeader ? (
-        <SectionHeader
-          eyebrow={editions.eyebrow}
-          title={editions.title}
-          subtitle={editions.subtitle}
-        />
+        <SectionHeader eyebrow={editions.eyebrow} title={editions.title} />
       ) : null}
 
       <div className={cn("grid gap-4 md:grid-cols-2", showHeader && "mt-10")}>

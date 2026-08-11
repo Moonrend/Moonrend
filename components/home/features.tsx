@@ -29,11 +29,7 @@ export function Features({ dict }: { dict: Dictionary }) {
 
   return (
     <Section id="capabilities" className="py-20 md:py-24">
-      <SectionHeader
-        eyebrow={features.eyebrow}
-        title={features.title}
-        subtitle={features.subtitle}
-      />
+      <SectionHeader eyebrow={features.eyebrow} title={features.title} />
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {cells.map((cell, index) => (

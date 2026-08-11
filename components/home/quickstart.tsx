@@ -31,11 +31,7 @@ export function Quickstart({ dict }: { dict: Dictionary }) {
 
   return (
     <Section className="py-20 md:py-24">
-      <SectionHeader
-        eyebrow={quickstart.eyebrow}
-        title={quickstart.title}
-        subtitle={quickstart.subtitle}
-      />
+      <SectionHeader eyebrow={quickstart.eyebrow} title={quickstart.title} />
 
       <div className="mt-10">
         <Tabs defaultValue="docker">

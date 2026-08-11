@@ -8,10 +8,8 @@ export type NavItem = { href: string; label: string };
 export function mainNav(locale: Locale, dict: Dictionary): NavItem[] {
   return [
     { href: `${localePath(locale, "/")}#capabilities`, label: dict.nav.product },
-    { href: localePath(locale, "/docs"), label: dict.nav.docs },
-    { href: localePath(locale, "/blog"), label: dict.nav.blog },
     { href: localePath(locale, "/pricing"), label: dict.nav.pricing },
-    { href: localePath(locale, "/changelog"), label: dict.nav.changelog },
+    { href: localePath(locale, "/blog"), label: dict.nav.blog },
   ];
 }
 

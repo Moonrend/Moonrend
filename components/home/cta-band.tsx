@@ -10,10 +10,6 @@ export function CtaBand({ dict }: { dict: Dictionary }) {
     <section className="container-site pb-28 pt-8 md:pb-36">
       <Reveal className="border-t border-border pt-14">
         <h2 className="heading-lg max-w-3xl text-balance text-foreground">{dict.cta.title}</h2>
-        <p className="mt-6 max-w-[46ch] text-base leading-[1.5] text-muted-foreground">
-          {dict.cta.subtitle}
-        </p>
-
         <div className="mt-9 flex flex-wrap items-center gap-3">
           <a href={siteConfig.login} className={cn(buttonVariants({ size: "lg" }), "font-normal")}>
             {dict.cta.primary}

@@ -109,9 +109,6 @@ export default async function BlogPostPage({ params }: PageProps<"/[locale]/blog
           <h2 className="text-base font-medium tracking-[-0.01em] text-foreground">
             {dict.cta.title}
           </h2>
-          <p className="mt-2 text-[13px] leading-[1.54] text-muted-foreground">
-            {dict.cta.subtitle}
-          </p>
           <a
             href={siteConfig.login}
             className={cn(buttonVariants({ size: "sm" }), "mt-5 font-normal")}

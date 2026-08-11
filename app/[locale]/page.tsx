@@ -1,8 +1,6 @@
 import { notFound } from "next/navigation";
 import { Hero } from "@/components/home/hero";
-import { McpStrip } from "@/components/home/mcp-strip";
 import { Features } from "@/components/home/features";
-import { HowItWorks } from "@/components/home/how-it-works";
 import { Editions } from "@/components/home/editions";
 import { Quickstart } from "@/components/home/quickstart";
 import { CtaBand } from "@/components/home/cta-band";
@@ -18,9 +16,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   return (
     <>
       <Hero dict={dict} />
-      <McpStrip dict={dict} />
       <Features dict={dict} />
-      <HowItWorks dict={dict} />
       <Editions dict={dict} />
       <Quickstart dict={dict} />
       <CtaBand dict={dict} />

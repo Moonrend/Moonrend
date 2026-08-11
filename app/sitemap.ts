@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/blog";
 import { locales } from "@/lib/i18n/config";
 import { siteConfig } from "@/lib/site";
 
-const staticPaths = ["", "/blog", "/pricing", "/docs", "/changelog", "/about"];
+const staticPaths = ["", "/pricing", "/blog", "/about"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = locales.flatMap((locale) =>

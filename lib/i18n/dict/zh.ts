@@ -8,7 +8,6 @@ export const zh = {
 
   nav: {
     product: "产品",
-    docs: "文档",
     blog: "博客",
     pricing: "定价",
     about: "关于",
@@ -22,23 +21,13 @@ export const zh = {
   },
 
   hero: {
-    badge: "AGPL-3.0",
     titleTop: "Zakura",
     titleBottom: "协同提升 Agent 的智能。",
-    subtitle: "隔离的容器化工作区，加一个统一的 MCP 网关。",
     ctaPrimary: "开始使用",
     ctaSecondary: "GitHub",
-    consoleTitle: "zakura",
-    consoleLines: [
-      { cmd: "pnpm setup", out: "install · db:generate · db:migrate" },
-      { cmd: "pnpm dev", out: "server :3000   web :3001   edition : oss" },
-      { cmd: "pnpm mcp:conformance", out: "github · shadcn · vercel · tasks" },
-    ],
+
   },
 
-  mcpStrip: {
-    label: "内置 MCP Server",
-  },
 
   features: {
     eyebrow: "能力",
@@ -111,7 +100,6 @@ export const zh = {
   footer: {
     links: {
       app: "控制台",
-      docs: "文档",
       blog: "博客",
       pricing: "定价",
       about: "关于",
@@ -119,7 +107,6 @@ export const zh = {
       issues: "问题反馈",
       license: "开源协议",
     },
-    licensed: "Zakura 以 AGPL-3.0 协议开源。",
   },
 
   blog: {
@@ -136,18 +123,6 @@ export const zh = {
     subtitle: "开源版免费。托管版公开预览期免费。",
   },
 
-  docsPage: {
-    title: "文档",
-    subtitle: "完整文档维护在 GitHub 仓库里。",
-    cards: [
-      { title: "部署", body: "Docker Compose、Headscale 与 Runner 的网络拓扑。", cta: "阅读" },
-      { title: "数据库", body: "PGlite 与 Postgres + pgvector，迁移命令。", cta: "阅读" },
-      { title: "版本形态", body: "ZAKURA_EDITION 与 strip:saas。", cta: "阅读" },
-    ],
-    repoTitle: "仓库结构",
-    helpTitle: "需要帮助？",
-    helpCta: "提交 issue",
-  },
 
   about: {
     title: "关于 Moonrend",
