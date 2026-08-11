@@ -72,15 +72,6 @@ export const en: Dictionary = {
         "Self-hosted Headscale and runners",
       ],
     },
-    tableTitle: "Capability comparison",
-    tableCols: { feature: "Capability", oss: "Open source", saas: "SaaS" },
-    table: [
-      { feature: "Accounts", oss: "Single account (/setup)", saas: "Self-registration + invites" },
-      { feature: "Tenancy", oss: "One implicit Default", saas: "Create / switch / admin" },
-      { feature: "Package", oss: "No @zakura/saas", saas: "Requires @zakura/saas" },
-      { feature: "How to enable", oss: "Default", saas: "ZAKURA_EDITION=saas" },
-      { feature: "Orchestration & gateway", oss: "Complete", saas: "Complete" },
-    ],
   },
 
   quickstart: {
@@ -133,8 +124,8 @@ export const en: Dictionary = {
   },
 
   about: {
-    title: "About",
-    subtitle: "About Moonrend and what we are building",
+    title: "Moonrend",
+    subtitle: "About us",
   },
 
   notFound: {

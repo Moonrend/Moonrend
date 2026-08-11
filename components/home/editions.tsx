@@ -108,33 +108,6 @@ export function Editions({ dict, showHeader = true }: EditionsProps) {
           </Plan>
         </Reveal>
       </div>
-
-      {/* The capability boundary, stated plainly rather than implied. */}
-      <Reveal delay={0.05} className="mt-14">
-        <h3 className="eyebrow text-faint">{editions.tableTitle}</h3>
-        <div className="mt-4 overflow-x-auto">
-          <table className="w-full min-w-[34rem] border-collapse text-left text-[13px]">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="py-3 pr-6 font-normal text-foreground">
-                  {editions.tableCols.feature}
-                </th>
-                <th className="py-3 pr-6 font-normal text-stone">{editions.tableCols.oss}</th>
-                <th className="py-3 font-normal text-stone">{editions.tableCols.saas}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {editions.table.map((row) => (
-                <tr key={row.feature} className="border-b border-border last:border-b-0">
-                  <td className="py-3 pr-6 text-foreground">{row.feature}</td>
-                  <td className="py-3 pr-6 font-mono text-[12px] text-stone">{row.oss}</td>
-                  <td className="py-3 font-mono text-[12px] text-stone">{row.saas}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Reveal>
     </Section>
   );
 }

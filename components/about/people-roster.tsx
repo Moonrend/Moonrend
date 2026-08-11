@@ -25,7 +25,7 @@ function MemberBody({ member, locale }: { member: Person; locale: Locale }) {
   );
 }
 
-export function TeamRoster({
+export function PeopleRoster({
   locale,
   className,
 }: {

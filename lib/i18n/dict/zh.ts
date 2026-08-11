@@ -71,15 +71,6 @@ export const zh = {
         "自托管 Headscale 与 Runner",
       ],
     },
-    tableTitle: "能力对照",
-    tableCols: { feature: "能力", oss: "开源版", saas: "SaaS 版" },
-    table: [
-      { feature: "账户", oss: "单账户（/setup）", saas: "自助注册 + 邀请" },
-      { feature: "租户", oss: "隐式唯一 Default", saas: "创建 / 切换 / 超管" },
-      { feature: "依赖包", oss: "无 @zakura/saas", saas: "需要 @zakura/saas" },
-      { feature: "启用方式", oss: "默认", saas: "ZAKURA_EDITION=saas" },
-      { feature: "编排与 MCP 网关", oss: "完整", saas: "完整" },
-    ],
   },
 
   quickstart: {
@@ -132,8 +123,8 @@ export const zh = {
   },
 
   about: {
-    title: "关于",
-    subtitle: "关于 Moonrend 与正在做的事",
+    title: "Moonrend",
+    subtitle: "关于我们",
   },
 
   notFound: {

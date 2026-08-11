@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { TeamRoster } from "@/components/about/team-roster";
+import { PeopleRoster } from "@/components/about/people-roster";
 import {
   BLOG_HERO_PAD,
   BlogSection,
@@ -50,7 +50,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
       </BlogSection>
 
       <BlogSection>
-        <TeamRoster locale={typedLocale} />
+        <PeopleRoster locale={typedLocale} />
       </BlogSection>
 
       <BlogSection>
